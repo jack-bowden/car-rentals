@@ -63,7 +63,7 @@ const ModelPageClient = ({
 				(endDate.getTime() - startDate.getTime()) / (1000 * 3600 * 24)
 			);
 			const price = useFormatPrice(totalDays * car.price);
-			return `- ${price}{' '}`;
+			return `- ${price} `;
 		}
 	};
 
