@@ -74,7 +74,7 @@ const ModelPageClient = ({
 			return totalDays;
 		}
 
-		return 0;
+		return null;
 	};
 
 	const functionMatcher: Matcher = (date: Date) => {
