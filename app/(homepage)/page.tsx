@@ -33,7 +33,7 @@ export default function Home() {
 					</Link>
 				</div>
 			</div>
-			<div className='mt-8 md:mt-auto w-full lg:ml-6 lg:mt-10'>
+			<div className='mt-8 md:mt-auto w-full lg:ml-6 lg:mt-24'>
 				<CarLogoBanner />
 			</div>
 		</main>
