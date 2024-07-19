@@ -62,7 +62,8 @@ const ModelPageClient = ({
 			const totalDays = Math.ceil(
 				(endDate.getTime() - startDate.getTime()) / (1000 * 3600 * 24)
 			);
-			return useFormatPrice(totalDays * car.price);
+			const price = useFormatPrice(totalDays * car.price);
+			return `- ${price}`;
 		}
 	};
 
@@ -71,7 +72,7 @@ const ModelPageClient = ({
 			const totalDays = Math.ceil(
 				(endDate.getTime() - startDate.getTime()) / (1000 * 3600 * 24)
 			);
-			return totalDays;
+			return `for ${totalDays} days`;
 		}
 
 		return null;
@@ -184,8 +185,8 @@ const ModelPageClient = ({
 							className='mt-6'
 						>
 							<Button className='w-full'>
-								Rent Vehicle - {calculateTotalPrice()} for{' '}
-								{calculateNumberOfDays()} days
+								Rent Vehicle {calculateTotalPrice()}
+								{calculateNumberOfDays()}
 							</Button>
 						</Link>
 					)}
@@ -193,8 +194,8 @@ const ModelPageClient = ({
 					{!clerkUserId && (
 						<SignInButton>
 							<Button className='w-full'>
-								Rent Vehicle - {calculateTotalPrice()} for{' '}
-								{calculateNumberOfDays()} days
+								Rent Vehicle {calculateTotalPrice()}
+								{calculateNumberOfDays()}
 							</Button>
 						</SignInButton>
 					)}
