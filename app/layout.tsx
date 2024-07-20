@@ -5,6 +5,7 @@ import Navbar from '@/components/navbar/Navbar';
 import { ClerkProvider } from '@clerk/nextjs';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Analytics } from '@vercel/analytics/react';
 
 const font = Nunito({ subsets: ['latin'] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<ClerkProvider>
+			<Analytics />
 			<html lang='en'>
 				<body className={font.className}>
 					<ToastContainer />
