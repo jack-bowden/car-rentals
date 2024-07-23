@@ -1,4 +1,4 @@
-# Car Rental Booking System
+# Car Rental
 
 An online platform for users to browse, select, and book rental cars for their travel needs.
 
