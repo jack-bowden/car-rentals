@@ -18,13 +18,11 @@ import {
 	SignOutButton,
 } from '@clerk/nextjs';
 import { X } from 'lucide-react';
-// import MobileSearch from './MobileSearch';
 
 const MobileNavbar = () => {
 	return (
 		<div className='flex items-center md:hidden'>
 			<Drawer>
-				{/* <MobileSearch /> */}
 				<DrawerTrigger>
 					<img src='/menu.svg' />
 				</DrawerTrigger>
