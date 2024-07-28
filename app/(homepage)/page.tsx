@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function Home() {
 	return (
-		<main className='min-h-full flex flex-col pt-10 sm:pt-6 lg:pt-10 max-h-[650px]'>
+		<main className='flex flex-col pt-10 sm:pt-6 lg:pt-10 min-h-[625px] max-h-[650px]'>
 			<div className='w-full max-h-[500px] flex flex-col lg:flex-row items-center justify-between flex-grow'>
 				<div className='w-full lg:w-auto lg:order-2 overflow-hidden'>
 					<Image
