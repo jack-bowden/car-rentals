@@ -24,7 +24,6 @@ export const getUsersBookings = async (clerkUserId: string) => {
 
 		return booking;
 	} catch (error) {
-		console.log(error);
 		throw Error;
 	}
 };
