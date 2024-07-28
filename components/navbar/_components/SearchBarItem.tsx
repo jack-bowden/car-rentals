@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface SearchBarItemProps {
 	title: string;
 	subtitle: string;

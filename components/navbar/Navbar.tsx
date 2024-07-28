@@ -1,9 +1,7 @@
 import Link from 'next/link';
-import React from 'react';
 import MobileNavbar from '../mobileNavbar/MobileNavbar';
-import { Button } from '../ui/button';
 import { SignInButton, SignOutButton } from '@clerk/nextjs';
-import { RedirectToSignIn, SignedIn, SignedOut } from '@clerk/nextjs';
+import { SignedIn, SignedOut } from '@clerk/nextjs';
 import { navBarItems } from '@/data';
 import {
 	DropdownMenuTrigger,

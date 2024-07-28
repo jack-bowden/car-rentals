@@ -1,4 +1,3 @@
-import React from 'react';
 import { SignedIn, SignedOut, RedirectToSignIn } from '@clerk/nextjs';
 import { Bookings } from '@/types';
 import BookingCard from './_components/BookingCard';

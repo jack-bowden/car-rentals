@@ -1,8 +1,9 @@
 'use client';
+
 import CarCard from '@/components/CarCard';
 import CarLogoBanner from '@/components/CarLogoBanner';
 import { carsForRent } from '@/data';
-import React, { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 // @ts-ignore
 import useEmblaCarousel, { EmblaCarouselType } from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';

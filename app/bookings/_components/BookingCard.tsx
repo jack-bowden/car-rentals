@@ -1,7 +1,7 @@
 'use client';
 
 import { Bookings } from '@/types';
-import React, { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import Image from 'next/image';
 import { useFormatPrice } from '@/lib/useFormatPrice';
 import { Separator } from '@/components/ui/separator';

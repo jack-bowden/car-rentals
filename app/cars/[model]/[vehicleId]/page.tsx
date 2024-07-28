@@ -1,4 +1,3 @@
-import React from 'react';
 import ModelPageClient from './ModelPageClient';
 import { auth } from '@clerk/nextjs/server';
 import { getBookings } from '@/hooks/getBookings';

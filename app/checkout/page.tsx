@@ -1,4 +1,3 @@
-import React from 'react';
 import CheckoutPageClient from './CheckoutPageClient';
 import { auth } from '@clerk/nextjs/server';
 

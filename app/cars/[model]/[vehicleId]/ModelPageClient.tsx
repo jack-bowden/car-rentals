@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { carsForRent } from '@/data';
 import Image from 'next/image';
 import { useFormatPrice } from '@/lib/useFormatPrice';
