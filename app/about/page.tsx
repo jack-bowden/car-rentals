@@ -6,7 +6,7 @@ import IndividualTestimonial from './_components/IndividualTestimonial';
 
 const Testimonials = () => {
 	return (
-		<main className='w-full h-full flex flex-col mt-6 items-center'>
+		<main className='w-full h-full flex flex-col mt-6 items-center mb-8'>
 			<div className='w-3/4 flex flex-col items-center'>
 				<h1 className='text-2xl sm:text-3xl md:truncate'>
 					Unmatched prices, better service and peace of mind
@@ -33,21 +33,21 @@ const Testimonials = () => {
 						carRented='BMW 3 Series'
 						testimonial='Amazing service, will certainly use again, everything was so quick
 						and easy.'
-						image='https://avatar.iran.liara.run/public/48'
+						image='/jack-smith.png'
 					/>
 					<IndividualTestimonial
 						name='Ben Goodall'
 						carRented='Vauxhall Corsa'
 						testimonial='Amazing service, will certainly use again, everything was so quick
 						and easy.'
-						image='https://avatar.iran.liara.run/public/32'
+						image='ben-goodhall.png'
 					/>
 					<IndividualTestimonial
 						name='Amy Leedham'
 						carRented='Audi A3'
 						testimonial='Amazing service, will certainly use again, everything was so quick
 						and easy.'
-						image='https://avatar.iran.liara.run/public/71'
+						image='amy-leedham.png'
 					/>
 				</div>
 			</div>

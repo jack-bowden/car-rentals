@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const CarLogoBanner = () => {
 	return (
-		<div className='w-full grid grid-cols-6 gap-4 items-center opacity-50 mt-6'>
+		<div className='w-full grid grid-cols-6 gap-4 items-center opacity-50 mt-12 sm:mt-20 '>
 			{carBrandLogos.map(brand => (
 				<div
 					key={brand.name}

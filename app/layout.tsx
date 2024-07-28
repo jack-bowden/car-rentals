@@ -43,7 +43,7 @@ export default function RootLayout({
 				<html lang='en'>
 					<body className={font.className}>
 						<ToastContainer />
-						<main className='min-h-full py-4 mx-auto max-w-6xl'>
+						<main className='min-h-full py-4 mx-auto max-w-6xl px-10'>
 							<Navbar />
 							{children}
 						</main>
