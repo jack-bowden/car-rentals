@@ -59,7 +59,6 @@ const BookingCard = ({ booking }: BookingCardProps) => {
 				const success = await useCancelBooking(booking.id);
 				if (success) {
 					toast.success('Booking canceled successfully');
-					// Optionally, you might want to refresh the bookings list or update the UI
 				} else {
 					toast.error('Failed to cancel booking');
 				}
