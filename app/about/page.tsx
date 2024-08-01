@@ -7,7 +7,7 @@ import IndividualTestimonial from './_components/IndividualTestimonial';
 const Testimonials = () => {
 	return (
 		<main className='w-full h-full flex flex-col mt-6 items-center mb-8'>
-			<div className='w-3/4 flex flex-col items-center'>
+			<div className='w-3/4 flex flex-col items-center mb-4'>
 				<h1 className='text-2xl sm:text-3xl md:truncate'>
 					Unmatched prices, better service and peace of mind
 					<span className='text-red-500'>.</span>

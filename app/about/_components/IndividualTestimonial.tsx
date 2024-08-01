@@ -14,7 +14,7 @@ const IndividualTestimonial = ({
 	image,
 }: IndividualTestimonialProps) => {
 	return (
-		<div>
+		<div className=''>
 			<div className='w-full flex justify-center'>
 				<div className='flex justify-center mt-2 md:mt-4 lg:mt-6'>
 					<Image

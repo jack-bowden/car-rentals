@@ -59,7 +59,7 @@ const Cars = () => {
 	}, [emblaApi, onSelect]);
 
 	return (
-		<main>
+		<main className='overflow-y-hidden h-[92vh]'>
 			<div className='mt-8 md:mt-10 lg:mt-12'>
 				<CarLogoBanner />
 			</div>
@@ -81,7 +81,7 @@ const Cars = () => {
 					/>
 				))}
 			</div>
-			<div className='relative hidden sm:block mt-8 md:mt-10 lg:mt-12'>
+			<div className='relative hidden overflow-hidden sm:block mt-8 md:mt-10 lg:mt-12'>
 				<div
 					className='overflow-hidden'
 					ref={emblaRef}
@@ -110,7 +110,7 @@ const Cars = () => {
 					</div>
 				</div>
 				<button
-					className={`absolute top-1/2 -left-3 transform -translate-y-1/2 z-10 p-2 bg-white/50 rounded-full shadow-md ${
+					className={`absolute top-[12.5rem] left-1 transform -translate-y-1/2 z-50 p-2 bg-white/50 rounded-full shadow-md ${
 						!prevBtnEnabled ? 'opacity-30' : 'hover:bg-gray-100'
 					}`}
 					onClick={scrollPrev}
@@ -119,7 +119,7 @@ const Cars = () => {
 					<ChevronLeft size={24} />
 				</button>
 				<button
-					className={`absolute top-1/2 -right-3 transform -translate-y-1/2 z-10 p-2 bg-white/50 rounded-full shadow-md ${
+					className={`absolute top-[12.5rem] right-1 transform -translate-y-1/2 z-10 p-2 bg-white/50 rounded-full shadow-md ${
 						!nextBtnEnabled ? 'opacity-30' : 'hover:bg-gray-100'
 					}`}
 					onClick={scrollNext}
