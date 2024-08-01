@@ -59,7 +59,7 @@ const Cars = () => {
 	}, [emblaApi, onSelect]);
 
 	return (
-		<main className='overflow-y-hidden h-[92vh]'>
+		<main className='md:overflow-y-hidden h-[92vh]'>
 			<div className='mt-8 md:mt-10 lg:mt-12'>
 				<CarLogoBanner />
 			</div>
