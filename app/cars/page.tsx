@@ -63,7 +63,7 @@ const Cars = () => {
 			<div className='mt-8 md:mt-10 lg:mt-12'>
 				<CarLogoBanner />
 			</div>
-			<div className='grid sm:hidden grid-cols-1 gap-6 mt-6'>
+			<div className='grid sm:hidden grid-cols-1 gap-6 mt-6 pb-12 md:pb-0'>
 				{carsForRent.map(car => (
 					<CarCard
 						key={car.vehicleId}
