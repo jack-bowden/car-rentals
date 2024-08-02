@@ -59,7 +59,7 @@ const Cars = () => {
 	}, [emblaApi, onSelect]);
 
 	return (
-		<main className='md:overflow-y-hidden h-[92vh]'>
+		<main className='md:overflow-y-hidden max-h-[87vh]'>
 			<div className='mt-8 md:mt-10 lg:mt-12'>
 				<CarLogoBanner />
 			</div>
@@ -90,7 +90,7 @@ const Cars = () => {
 						{carsForRent.map(car => (
 							<div
 								key={car.vehicleId}
-								className='flex-[0_0_50%] lg:flex-[0_0_33.333%] min-w-0 pl-4 pr-4'
+								className='flex-[0_0_50%] lg:flex-[0_0_33.333%] sm:max-h-[465px] min-w-0 pl-4 pr-4'
 							>
 								<CarCard
 									image={car.image}

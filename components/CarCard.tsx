@@ -47,13 +47,15 @@ const CarCard = ({
 						<StarRating rating={rating} />
 						<p className='ml-2 pt-1 font-semibold'>{rating}</p>
 					</div>
-					<Image
-						src={`/${image}`}
-						alt='Car Image'
-						width={400}
-						height={400}
-						className='w-full min-h-[125px] max-w-[530px] max-h-[330px] sm:max-h-none md:max-h-[290px] lg:max-h-none h-auto'
-					/>
+					<div className='flex justify-center items-center'>
+						<Image
+							src={`/${image}`}
+							alt='Car Image'
+							width={400}
+							height={400}
+							className='w-full min-h-[125px] max-w-[430px] max-h-[250px] sm:max-h-[250px] md:max-h-[220px] md:max-w-[320px] lg:max-h-none h-auto object-contain'
+						/>
+					</div>
 					<div className='flex'>
 						<p className='text-sm text-secondary-foreground'>{doors} doors</p>
 					</div>
