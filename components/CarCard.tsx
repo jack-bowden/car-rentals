@@ -38,11 +38,7 @@ const CarCard = ({
 	return (
 		<Card className={cn('overflow-hidden', className)}>
 			<CardContent className='p-2 space-y-2'>
-				<Link
-					href={`/cars/${make.toLowerCase()}-${model
-						.toLowerCase()
-						.replaceAll(' ', '-')}/${vehicleId?.toString()}`}
-				>
+				<Link href={`/cars/${vehicleId?.toString()}`}>
 					<div className='flex items-center'>
 						<StarRating rating={rating} />
 						<p className='ml-2 pt-1 font-semibold'>{rating}</p>

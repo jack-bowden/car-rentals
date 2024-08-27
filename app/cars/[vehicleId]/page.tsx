@@ -30,7 +30,7 @@ const ModelPage = async ({
 
 	return (
 		<ModelPageClient
-			model={model}
+			vehicleId={vehicleId}
 			clerkUserId={clerkUserId || ''}
 			bookedDateRanges={bookedDateRanges || []}
 		/>

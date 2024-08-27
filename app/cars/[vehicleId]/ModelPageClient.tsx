@@ -7,7 +7,6 @@ import { useFormatPrice } from '@/lib/useFormatPrice';
 import StarRating from '@/components/StarRatings';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import {
 	Popover,
 	PopoverContent,
@@ -18,22 +17,21 @@ import { SignInButton } from '@clerk/nextjs';
 import { Matcher } from 'react-day-picker';
 
 interface ModelPageClientProps {
-	model: string;
 	clerkUserId: string | '';
 	bookedDateRanges: { startDate: string; endDate: string }[] | [];
+	vehicleId: string;
 }
 
 const ModelPageClient = ({
-	model,
 	clerkUserId,
 	bookedDateRanges,
+	vehicleId,
 }: ModelPageClientProps) => {
 	const [dateRange, setDateRange] = useState<[Date | null, Date | null]>([
 		null,
 		null,
 	]);
 	const [startDate, endDate] = dateRange;
-	const router = useRouter();
 
 	const handleDateChange = (update: [Date | null, Date | null]) => {
 		setDateRange(update);
@@ -49,13 +47,17 @@ const ModelPageClient = ({
 		}
 	};
 
-	const car = carsForRent.find(
-		car =>
-			car.make.toLowerCase() +
-				'-' +
-				car.model.toLowerCase().replaceAll(' ', '-') ===
-			model
-	);
+	const car = carsForRent.find(car => car.vehicleId === Number(vehicleId));
+
+	if (!car) {
+		return (
+			<div className='flex items-center justify-center h-[88vh]'>
+				<h1 className='text-2xl font-semibold'>
+					Car not found. Please check the vehicle ID and try again.
+				</h1>
+			</div>
+		);
+	}
 
 	const calculateTotalPrice = () => {
 		if (startDate && endDate && car) {
@@ -99,55 +101,53 @@ const ModelPageClient = ({
 	return (
 		<main className='w-full min-h-[88vh] px-4 sm:px-12 justify-center flex flex-col'>
 			<div className='flex flex-col items-center w-full h-full justify-center'>
-				{car && (
-					<Image
-						src={`/${car.image}`}
-						alt={car.model}
-						width={550}
-						height={550}
-					/>
-				)}
+				<Image
+					src={`/${car.image}`}
+					alt={car.model}
+					width={550}
+					height={550}
+				/>
 				<div className='w-full flex items-center justify-center'>
 					<h1 className='text-xl sm:text-2xl'>
-						{car?.make} {car?.model}
+						{car.make} {car.model}
 					</h1>
 					<div className='flex truncate ml-10'>
-						<StarRating rating={car?.rating} />
-						<p className='ml-2 pt-1 font-semibold'>{car?.rating}</p>
+						<StarRating rating={car.rating} />
+						<p className='ml-2 pt-1 font-semibold'>{car.rating}</p>
 					</div>
 				</div>
 				<div className='grid grid-cols-2 h-full w-full sm:w-4/5 space-y-1 mt-4 truncate gap-x-2'>
 					<p className='text-left font-semibold'>
 						Price<span className='text-red-500 font-bold'>:</span>{' '}
 						<span className='text-secondary-foreground'>
-							{useFormatPrice(Number(car?.price))} / Day
+							{useFormatPrice(Number(car.price))} / Day
 						</span>
 					</p>
 					<p className='text-right font-semibold'>
 						Doors<span className='text-red-500 font-bold'>:</span>{' '}
-						<span className='text-secondary-foreground'>{car?.doors}</span>
+						<span className='text-secondary-foreground'>{car.doors}</span>
 					</p>
 					<p className='text-left font-semibold'>
 						Transmission
 						<span className='text-red-500 font-bold'>:</span>{' '}
 						<span className='text-secondary-foreground'>
-							{car?.transmission}
+							{car.transmission}
 						</span>
 					</p>
 					<p className='text-right font-semibold'>
 						Fuel Type
 						<span className='text-red-500 font-bold'>:</span>{' '}
-						<span className='text-secondary-foreground'>{car?.fuelType}</span>
+						<span className='text-secondary-foreground'>{car.fuelType}</span>
 					</p>
 					<p className='text-left font-semibold'>
 						Power
 						<span className='text-red-500 font-bold'>:</span>{' '}
-						<span className='text-secondary-foreground'>{car?.power}</span>
+						<span className='text-secondary-foreground'>{car.power}</span>
 					</p>
 					<p className='text-right font-semibold'>
 						MPG
 						<span className='text-red-500 font-bold'>:</span>{' '}
-						<span className='text-secondary-foreground'>{car?.mpg}</span>
+						<span className='text-secondary-foreground'>{car.mpg}</span>
 					</p>
 				</div>
 			</div>
@@ -161,7 +161,8 @@ const ModelPageClient = ({
 
 							<PopoverContent className='w-auto p-0'>
 								<Calendar
-									mode='range' // @ts-ignore
+									mode='range'
+									// @ts-ignore
 									selected={{ from: startDate, to: endDate }}
 									onSelect={range => {
 										handleDateChange([range?.from || null, range?.to || null]);
@@ -177,7 +178,7 @@ const ModelPageClient = ({
 							href={{
 								pathname: '/checkout',
 								query: {
-									vehicleId: car?.vehicleId!.toString(),
+									vehicleId: car.vehicleId.toString(),
 									startDate: `${startDate.toISOString()}`,
 									endDate: `${endDate.toISOString()}`,
 								},
